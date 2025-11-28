@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technovation Girls - 世界へ飛び出そう</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        iframe {
+        vertical-align: bottom;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Zen Kaku Gothic New', sans-serif; }
+        .font-eng { font-family: 'Montserrat', sans-serif; }
+        
+        /* Airmail Border */
+        .airmail-border {
+            background-image: repeating-linear-gradient(135deg, #EF4444 0px, #EF4444 20px, #ffffff 20px, #ffffff 40px, #3B82F6 40px, #3B82F6 60px, #ffffff 60px, #ffffff 80px);
+            height: 8px;
+            width: 100%;
+        }
+
+        /* Plane Animation */
+        @keyframes fly {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translate(200px, -100px) rotate(-10deg); opacity: 0; }
+        }
+        .plane-anim {
+            animation: fly 8s infinite linear;
+        }
+
+        /* Map Dots Animation */
+        @keyframes pulse-dot {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.5); opacity: 1; }
+        }
+        .map-dot {
+            animation: pulse-dot 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 overflow-x-hidden">
+
+    <!-- Airmail Top Border -->
+    <div class="airmail-border fixed top-0 z-[60]"></div>
+
+    <!-- Header -->
+    <header class="fixed top-2 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100 mt-2">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex flex-col">
+                <div class="flex items-center gap-2 font-bold text-xl text-slate-900 tracking-tight font-eng">
+                    Technovation Girls <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded-sm ml-1 transform -skew-x-12">JAPAN</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600 font-eng tracking-wide">
+                <!-- <a href="#about" class="hover:text-blue-600 transition-colors">ABOUT</a>
+                <a href="#voice" class="hover:text-blue-600 transition-colors">VOICE</a>
+                <a href="#merit" class="hover:text-blue-600 transition-colors">FUTURE</a>
+                <a href="#faq" class="hover:text-blue-600 transition-colors">FAQ</a> -->
+                <a href="https://share-na2.hsforms.com/1fTUVEef2T6ueyWp-Hnhw5wcjgs8" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
+                    <i data-lucide="plane-takeoff" class="w-4 h-4"></i> BOARDING
+                </a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-slate-800">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 py-2 px-4 md:hidden">
+            <!-- <a href="#about" class="mobile-link block w-full text-left py-3 border-b border-slate-50 text-slate-600 font-bold">ABOUT</a>
+            <a href="#voice" class="mobile-link block w-full text-left py-3 border-b border-slate-50 text-slate-600 font-bold">VOICE</a>
+            <a href="#merit" class="mobile-link block w-full text-left py-3 border-b border-slate-50 text-slate-600 font-bold">FUTURE</a>
+            <a href="#faq" class="mobile-link block w-full text-left py-3 border-b border-slate-50 text-slate-600 font-bold">FAQ</a> -->
+            <div class="py-4">
+                <a href="https://share-na2.hsforms.com/1fTUVEef2T6ueyWp-Hnhw5wcjgs8" class="block w-full bg-blue-600 text-white text-center py-3 rounded-full font-bold">ENTRY NOW</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section: TAKE OFF -->
+    <section class="relative pt-32 pb-20 md:pt-48 md:pb-40 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 overflow-hidden text-white">
+        
+        <!-- Background World Map (Simplified with CSS/SVG) -->
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <!-- Simulated map dots -->
+            <div class="absolute top-1/3 left-1/4 w-2 h-2 bg-white rounded-full map-dot" style="animation-delay: 0s;"></div>
+            <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-white rounded-full map-dot" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/3 right-1/4 w-2 h-2 bg-white rounded-full map-dot" style="animation-delay: 2s;"></div>
+            <!-- Connecting lines -->
+            <svg class="absolute inset-0 w-full h-full" stroke="white" stroke-width="0.5" fill="none">
+                <path d="M 200 300 Q 400 100 800 300" stroke-dasharray="5,5" class="opacity-30" />
+                <path d="M 300 400 Q 600 600 900 200" stroke-dasharray="5,5" class="opacity-30" />
+            </svg>
+        </div>
+
+        <!-- Flying Plane -->
+        <div class="absolute top-1/4 left-1/4 text-white/10 plane-anim pointer-events-none">
+            <i data-lucide="plane" class="w-32 h-32 transform rotate-45"></i>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                
+                <div class="flex-1 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-yellow-300 px-4 py-1.5 rounded-full text-sm font-bold mb-8 font-eng tracking-wider">
+                        <i data-lucide="ticket" class="w-4 h-4"></i>
+                        PASSPORT TO THE FUTURE
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl font-eng font-black leading-tight mb-6 tracking-tight">
+                        FLY TO THE <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">WORLD.</span>
+                    </h1>
+                    
+                    <p class="text-slate-200 text-lg md:text-xl leading-relaxed mb-10 max-w-lg font-medium">
+                        教室を飛び出し、世界へ。<br>
+                        シリコンバレー発のテクノロジー教育プログラムで、<br class="hidden md:block"/>
+                        あなたのアイデアが、国境を越える翼になる。
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <a href="https://share-na2.hsforms.com/1fTUVEef2T6ueyWp-Hnhw5wcjgs8" target="_blank" rel="noopener noreferrer" class="group w-full sm:w-auto bg-blue-500 hover:bg-blue-400 text-white px-8 py-5 rounded-full font-bold text-lg transition-all shadow-[0_0_30px_rgba(59,130,246,0.4)] flex items-center justify-center gap-3">
+                            <i data-lucide="plane-takeoff" class="w-6 h-6 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform"></i>
+                            BOARDING NOW
+                        </a>
+                        <div class="text-left">
+                            <span class="block text-xs text-slate-400 font-bold uppercase tracking-widest">Departure Limit</span>
+                            <span class="block text-lg font-bold text-white">Dec 5th, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual: Ticket/Card Style -->
+                <div class="flex-1 w-full relative perspective-1000">
+                    <div class="relative transform rotate-y-12 rotate-z-2 hover:rotate-0 transition-transform duration-700 ease-out">
+                        <!-- Stamp Decor -->
+                        <div class="absolute -top-6 -right-6 w-24 h-24 bg-white/10 rounded-full border-4 border-white/30 flex items-center justify-center transform rotate-12 z-20 backdrop-blur-sm">
+                            <span class="text-white/50 font-black font-eng text-xs text-center leading-tight">WORLD<br>SUMMIT<br>ADMITTED</span>
+                        </div>
+
+                        <!-- Main Image Card -->
+                        <div class="bg-white p-2 pb-12 rounded-xl shadow-2xl transform rotate-3 relative">
+                             <div class="aspect-video bg-slate-200 rounded-lg overflow-hidden relative">
+                                <!-- Placeholder for Action Image -->
+                                <div class="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 mix-blend-multiply opacity-60"></div>
+                                <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-900 p-8 text-center bg-slate-100/50">
+                                    <i data-lucide="globe-2" class="w-16 h-16 text-blue-600 mb-2"></i>
+                         <!-- Placeholder Photo -->
+                         <img src="https://lh3.googleusercontent.com/d/1kP1GoI9lHbeaissAUfkXI6eNjMxzdsWF" class="w-full h-full object-cover" alt="TG-2025">
+                                </div>
+                             </div>
+                             <div class="absolute bottom-4 left-6">
+                                <h3 class="font-eng font-black text-2xl text-slate-900">BOARDING PASS</h3>
+                                <p class="text-xs text-slate-500 font-bold tracking-widest">TO: THE WORLD</p>
+                             </div>
+                             <div class="absolute bottom-4 right-6">
+                                <i data-lucide="qr-code" class="w-12 h-12 text-slate-900"></i>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moving Tape/Banner -->
+    <div class="bg-yellow-400 overflow-hidden py-3 transform -skew-y-2 border-y-4 border-black">
+        <div class="whitespace-nowrap flex gap-8 animate-marquee font-black font-eng text-black text-xl tracking-widest">
+            <span>// CHANGE THE WORLD // GIRLS IN TECH // GLOBAL CHALLENGE // </span>
+            <span>// CHANGE THE WORLD // GIRLS IN TECH // GLOBAL CHALLENGE // </span>
+            <span>// CHANGE THE WORLD // GIRLS IN TECH // GLOBAL CHALLENGE // </span>
+        </div>
+    </div>
+
+    <!-- About Program -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-blue-600 font-black tracking-widest font-eng text-sm mb-2 block">YOUR MISSION</span>
+                <h2 class="text-4xl font-bold mb-6">
+                    世界とつながる、<br>
+                    <span class="text-blue-600">6ヶ月間の冒険</span>へ。
+                </h2>
+                <p class="text-slate-600 text-lg">
+                    Technovation Girlsは、アプリ開発を通じて社会課題に挑むグローバルコンペティション。<br>
+                    英語を使い、テクノロジーを学び、世界中の仲間と競い合う。<br>
+                    それは、あなたの可能性を世界へと広げる旅です。
+                </p>
+            </div>
+
+            <!-- Steps as Flight Path -->
+            <div class="relative max-w-5xl mx-auto">
+                <!-- Connecting Dotted Line -->
+                <div class="absolute top-1/2 left-0 w-full h-1 border-t-4 border-dashed border-slate-200 -translate-y-1/2 hidden md:block z-0"></div>
+
+                <div class="grid md:grid-cols-3 gap-8 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-slate-100 hover:border-blue-400 transition-colors group text-center">
+                        <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="map" class="w-10 h-10 text-blue-600"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 font-eng">1. DISCOVER</h3>
+                        <p class="text-slate-600 text-sm">身近な課題を発見し、解決策を考える。旅の始まりは「問い」を見つけることから。</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-slate-100 hover:border-purple-400 transition-colors group text-center transform md:-translate-y-8">
+                        <div class="w-20 h-20 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="code-2" class="w-10 h-10 text-purple-600"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 font-eng">2. BUILD</h3>
+                        <p class="text-slate-600 text-sm">初心者向けツールでアプリを開発。同時にビジネスプランも作成し、アイデアを形に。</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-slate-100 hover:border-green-400 transition-colors group text-center">
+                        <div class="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="send" class="w-10 h-10 text-green-600"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 font-eng">3. FLY</h3>
+                        <p class="text-slate-600 text-sm">英語でピッチ（プレゼン）を行い、世界へ発信。世界大会を目指そう。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voices Section: Travel Scrapbook Style -->
+    <section id="voice" class="py-24 bg-slate-100 relative overflow-hidden">
+        <!-- Background Stamps -->
+        <div class="absolute top-10 right-10 opacity-10 transform rotate-12">
+            <i data-lucide="stamp" class="w-40 h-40 text-slate-800"></i>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <span class="bg-blue-600 text-white px-4 py-1 rounded-sm text-xs font-bold tracking-widest font-eng mb-4 inline-block transform -rotate-2">TRAVEL LOGS</span>
+                <h2 class="text-4xl font-bold text-slate-800">参加者の「旅」の記録</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Voice Card 1: Polaroid Style -->
+                <div class="bg-white p-4 pb-8 shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-300">
+                    <div class="bg-slate-200 aspect-square w-full mb-4 overflow-hidden relative">
+                         <!-- Placeholder Photo -->
+                         <!-- TODO: みさきさんの画像を挿入してください。 -->
+                         <img src="https://lh3.googleusercontent.com/d/1xQNSaQU-aPveZ-i-bK3s7VqvDTLmEIsP" class="w-full h-full object-cover" alt="みさきさんの写真">
+                    </div>
+                    <div class="px-2">
+                        <h4 class="font-bold text-lg font-eng text-slate-900">"Growth Mindset"</h4>
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                            TGに参加していろいろなことに挑戦できるようになり、できないなと思うことがあっても何かしら形にできる方法があるよなと考えるようになりました。
+                        </p>
+                        <div class="mt-4 flex justify-between items-end border-t border-slate-100 pt-3">
+                            <span class="text-xs font-bold text-blue-600">みさきさん (2022, 2023年参加者)</span>
+                            <i data-lucide="plane" class="w-4 h-4 text-slate-300"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice Card 2: Polaroid Style -->
+                <div class="bg-white p-4 pb-8 shadow-lg transform -rotate-1 hover:rotate-0 transition-transform duration-300 z-10 md:-mt-8">
+                    <div class="bg-slate-200 aspect-square w-full mb-4 overflow-hidden relative">
+                         <!-- Placeholder Photo -->
+                         <!-- TODO: かのこさんの画像を挿入してください。 -->
+                         <img src="https://lh3.googleusercontent.com/d/19gPS1YH6ig8qt_6C3bEFeo5Oy6f35p_a" class="w-full h-full object-cover" alt="かのこさんの写真">
+                    </div>
+                    <div class="px-2">
+                        <h4 class="font-bold text-lg font-eng text-slate-900">"Leadership"</h4>
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                            TGでのチームワークを経験して、任せたいと思える仲間と出会ったことで、人を巻き込んでより高みを目指すという経験ができました。
+                        </p>
+                        <div class="mt-4 flex justify-between items-end border-t border-slate-100 pt-3">
+                            <span class="text-xs font-bold text-purple-600">かのこさん (2025年参加者)</span>
+                            <i data-lucide="code" class="w-4 h-4 text-slate-300"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice Card 3: Polaroid Style -->
+                <div class="bg-white p-4 pb-8 shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                    <div class="bg-slate-200 aspect-square w-full mb-4 overflow-hidden relative">
+                         <!-- Placeholder Photo -->
+                         <!-- TODO: あゆみさんの画像を挿入してください。Google Driveの共有リンクは使用できません。直接画像ファイルへのURLに置き換えてください。 -->
+                         <img src="https://lh3.googleusercontent.com/d/1sC-KA9R-aPtadEiYnnsBxwpoBYfadRLt" class="w-full h-full object-cover" alt="あゆみさんの写真">
+                    </div>
+                    <div class="px-2">
+                        <h4 class="font-bold text-lg font-eng text-slate-900">"Fearless Challenge"</h4>
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                            英会話の先生に進められて参加しました。コーディングはやったことがなかったけど、できないからこそやってみようと思って挑戦しました。
+                        </p>
+                        <div class="mt-4 flex justify-between items-end border-t border-slate-100 pt-3">
+                            <span class="text-xs font-bold text-green-600">あゆみさん (2025年参加者)</span>
+                            <i data-lucide="home" class="w-4 h-4 text-slate-300"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Merit for Career -->
+    <section id="merit" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                <div class="flex-1 w-full">
+                    <div class="relative">
+                        <!-- Decor -->
+                        <div class="absolute -top-10 -left-10 w-40 h-40 bg-yellow-100 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                        
+                        <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-2xl relative z-10">
+                            <div class="flex items-center gap-4 mb-8 border-b border-white/20 pb-4">
+                                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center font-bold text-xl">
+                                    <i data-lucide="briefcase" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg font-eng">FUTURE PASSPORT</h3>
+                                    <p class="text-xs text-slate-400">SKILLS ACQUIRED</p>
+                                </div>
+                            </div>
+                            <ul class="space-y-6">
+                                <li class="flex items-center gap-4">
+                                    <div class="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="check" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block font-bold">Global Mindset</span>
+                                        <span class="text-xs text-slate-400">多様な価値観を受け入れる視野</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-center gap-4">
+                                    <div class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="check" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block font-bold">Problem Solving</span>
+                                        <span class="text-xs text-slate-400">答えのない問いに挑む力</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-center gap-4">
+                                    <div class="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="check" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block font-bold">English Pitch</span>
+                                        <span class="text-xs text-slate-400">英語でアイデアを伝えるピッチ経験</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex-1">
+                    <span class="text-blue-600 font-bold tracking-widest font-eng text-sm mb-2 block uppercase">Beyond Borders</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        その経験は、<br>
+                        国境を越える「武器」になる。
+                    </h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed text-lg">
+                        Technovation Girlsでの経験は、大学入試（総合型選抜・海外大学進学）での強力なアピール材料になります。<br>
+                        しかしそれ以上に、ここで得た「私は世界を変えられる」という自信は、どのような進路を選んでも、あなたを支える一生のパスポートになります。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16">
+                <span class="text-slate-400 font-bold font-eng tracking-widest text-sm">Q & A</span>
+                <h2 class="text-3xl font-bold mt-2">よくある質問</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg flex items-start gap-3 text-slate-800">
+                        <span class="bg-blue-100 text-blue-700 py-1 px-2 rounded text-xs font-bold mt-1">Q</span>
+                        英語に自信がありません...
+                    </h3>
+                    <p class="text-slate-600 mt-3 pl-9 text-sm leading-relaxed">
+                        大丈夫です！多くの参加者が最初は不安を感じていますが、メンターがしっかりサポートします。
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg flex items-start gap-3 text-slate-800">
+                        <span class="bg-blue-100 text-blue-700 py-1 px-2 rounded text-xs font-bold mt-1">Q</span>
+                        パソコンが苦手でも平気？
+                    </h3>
+                    <p class="text-slate-600 mt-3 pl-9 text-sm leading-relaxed">
+                        はい。プログラミング未経験から世界大会に行ったチームもたくさんいます。初心者でも扱いやすいツールを使い、基礎から学べるカリキュラムが用意されています。
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg flex items-start gap-3 text-slate-800">
+                        <span class="bg-blue-100 text-blue-700 py-1 px-2 rounded text-xs font-bold mt-1">Q</span>
+                        参加費はかかりますか？
+                    </h3>
+                    <p class="text-slate-600 mt-3 pl-9 text-sm leading-relaxed">
+                        いいえ、プログラムへの参加は完全無料です。PCの無料レンタルも行っています。「挑戦したい」という気持ちがあれば、誰でも参加できます。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section: Gate Info -->
+    <section class="py-32 bg-blue-900 text-white text-center relative overflow-hidden">
+        <!-- Decor: Dashed Lines like Runway -->
+        <div class="absolute inset-0 flex justify-center opacity-10">
+            <div class="w-1 h-full border-l-4 border-dashed border-white"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="inline-block bg-white/10 backdrop-blur border border-white/20 px-8 py-4 rounded-lg mb-8">
+                <div class="flex items-center gap-8 text-sm md:text-base font-eng font-bold tracking-widest text-blue-200">
+                    <span>FLIGHT: TG-2026</span>
+                    <span>DESTINATION: FUTURE</span>
+                </div>
+            </div>
+
+            <h2 class="text-4xl md:text-6xl font-black font-eng mb-8 leading-tight">
+                READY FOR <br>TAKEOFF?
+            </h2>
+            <p class="text-blue-200 mb-12 text-lg">
+                世界へのチケットは、あなたの手の中に。<br>
+                まだ見ぬ景色を見に行こう。
+            </p>
+            
+            <a href="https://share-na2.hsforms.com/1fTUVEef2T6ueyWp-Hnhw5wcjgs8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-yellow-400 text-blue-900 px-12 py-5 rounded-full font-bold text-xl hover:bg-white hover:scale-105 transition-all duration-300 shadow-xl">
+                <span class="font-eng tracking-widest">GET YOUR TICKET</span>
+                <i data-lucide="plane" class="w-6 h-6 transform -rotate-45"></i>
+            </a>
+            
+            <div class="mt-10 text-sm text-blue-300 font-bold font-eng">
+                GATE CLOSES: DEC 5th, 2025
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-12 text-center text-slate-500 text-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center items-center gap-2 mb-4 font-bold text-slate-300 font-eng text-lg">
+                Technovation Girls <span class="text-blue-500">JAPAN</span>
+            </div>
+            <p>© 2026 Technovation Girls Japan Region / Waffle. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (!mobileMenu.classList.contains('hidden')) {
+                menuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+            } else {
+                menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            }
+            lucide.createIcons();
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                lucide.createIcons();
+            });
+        });
+    </script>
+</body>
+</html>
