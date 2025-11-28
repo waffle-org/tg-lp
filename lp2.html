@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technovation Girls - 日本中が、わたしたちの教室</title>
+    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons --><script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts --><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        iframe { vertical-align: bottom; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Zen Kaku Gothic New', sans-serif; }
+        .font-eng { font-family: 'Montserrat', sans-serif; }
+        
+        /* Digital Stream Border */
+        .digital-border {
+            background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+            height: 6px;
+            width: 100%;
+        }
+
+        /* Signal Animation */
+        @keyframes ping-slow {
+            0% { transform: scale(1); opacity: 0.8; }
+            75%, 100% { transform: scale(2); opacity: 0; }
+        }
+        .signal-ring {
+            animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .float-anim {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+
+        /* Custom Height for Hero Image */
+        .h-70 {
+            height: 17.5rem; /* 280px */
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 overflow-x-hidden">
+
+    <!-- Digital Top Border --><div class="digital-border fixed top-0 z-[60]"></div>
+
+    <!-- Header --><header class="fixed top-2 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100 mt-2">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex flex-col">
+                <div class="flex items-center gap-2 font-bold text-xl text-slate-900 tracking-tight font-eng">
+                    Technovation Girls <span class="bg-cyan-500 text-white text-xs px-2 py-1 rounded-full ml-1">JAPAN REGION</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600 font-eng tracking-wide">
+                <a href="https://share-na2.hsforms.com/1fTUVEef2T6ueyWp-Hnhw5wcjgs8" target="_blank" rel="noopener noreferrer" class="bg-slate-900 text-white px-6 py-2.5 rounded-full hover:bg-slate-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
+                    <i data-lucide="wifi" class="w-4 h-4"></i> JOIN ONLINE
+                </a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-slate-800">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu --><div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 py-2 px-4 md:hidden">
+            <div class="py-4">
+                <a href="https://share-na2.hsforms.com/1fTUVEef2T6ueyWp-Hnhw5wcjgs8" class="block w-full bg-cyan-500 text-white text-center py-3 rounded-full font-bold">ENTRY NOW</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section: CONNECT --><section class="relative pt-32 pb-20 md:pt-48 md:pb-40 bg-gradient-to-br from-slate-50 via-cyan-50 to-blue-50 overflow-hidden">
+        
+        <!-- Background Grid & Map Abstract --><div class="absolute inset-0 pointer-events-none">
+            <!-- Grid Pattern --><div class="absolute inset-0" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 30px 30px; opacity: 0.5;"></div>
+            
+            <!-- Abstract Japan Map Dots --><div class="absolute top-1/4 right-1/4 w-full h-full opacity-30 hidden md:block">
+                <!-- Hokkaido --><div class="absolute top-[10%] right-[15%] w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
+                <!-- Tohoku --><div class="absolute top-[30%] right-[18%] w-2 h-2 bg-slate-400 rounded-full"></div>
+                <!-- Kanto (Tokyo) --><div class="absolute top-[45%] right-[22%] w-4 h-4 bg-cyan-600 rounded-full shadow-[0_0_20px_rgba(8,145,178,0.5)]">
+                    <div class="absolute -inset-2 bg-cyan-400/30 rounded-full signal-ring"></div>
+                </div>
+                <!-- Kansai (Osaka) --><div class="absolute top-[55%] right-[28%] w-3 h-3 bg-cyan-500 rounded-full"></div>
+                <!-- Kyushu --><div class="absolute top-[65%] right-[35%] w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
+                <!-- Okinawa --><div class="absolute top-[85%] right-[40%] w-2 h-2 bg-cyan-400 rounded-full"></div>
+                
+                <!-- Connecting Lines SVG --><svg class="absolute inset-0 w-full h-full" stroke="currentColor" class="text-cyan-300">
+                    <path d="M 850 100 L 780 450 L 720 550 L 650 650" stroke-width="1" fill="none" stroke-dasharray="4 4" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                
+                <div class="flex-1 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white border border-cyan-100 shadow-sm text-cyan-700 px-4 py-1.5 rounded-full text-sm font-bold mb-8 font-eng tracking-wider">
+                        <span class="relative flex h-3 w-3">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        </span>
+                        ONLINE ACCESS OPEN
+                    </div>
+                    
+                    <h1 class="text-6xl md:text-5xl font-eng font-black leading-tight mb-6 tracking-tight text-slate-900">
+                        日本中の仲間と <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">未来をつくろう</span>
+                    </h1>
+                    
+                    <p class="text-slate-600 text-lg md:text-xl leading-relaxed mb-10 max-w-lg font-medium">
+                        日本中が、あなたの教室。<br>
+                        全国からオンラインでつながるチーム。<br class="hidden md:block"/>
+                        場所の制約を超えて、仲間とアプリ開発に挑もう。
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <a href="https://share-na2.hsforms.com/1fTUVEef2T6ueyWp-Hnhw5wcjgs8" target="_blank" rel="noopener noreferrer" class="group w-full sm:w-auto bg-cyan-500 hover:bg-cyan-400 text-white px-8 py-5 rounded-full font-bold text-lg transition-all shadow-[0_10px_30px_rgba(6,182,212,0.3)] flex items-center justify-center gap-3">
+                            <i data-lucide="mouse-pointer-2" class="w-6 h-6 group-hover:-translate-y-1 transition-transform"></i>
+                            START CONNECTION
+                        </a>
+                        <div class="text-left pl-2">
+                            <span class="block text-xs text-slate-400 font-bold uppercase tracking-widest">Access Limit</span>
+                            <span class="block text-lg font-bold text-slate-700">Dec 5th, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual: Interface / Window Style --><div class="flex-1 w-full relative perspective-1000">
+                    <div class="float-anim relative">
+                        <!-- Background Blobs --><div class="absolute -top-10 -right-10 w-64 h-64 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+                        <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+
+                        <!-- Main Interface Card (z-10) --><div class="bg-white/80 backdrop-blur-xl p-2 rounded-2xl shadow-2xl border border-white/50 relative z-10">
+                             <!-- Window Header --><div class="flex items-center gap-2 px-4 py-3 border-b border-slate-100">
+                                <div class="flex gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                </div>
+                                <div class="flex-1 text-center text-xs font-bold text-slate-400 font-eng">TG_JAPAN_ONLINE.app</div>
+                             </div>
+
+                             <!-- Window Content --><div class="h-70 bg-slate-100 rounded-lg overflow-hidden relative group">
+                                <img src="https://lh3.googleusercontent.com/d/1gXZPMhBRBGEhCygxlxxo9Wg5BnThXIg0" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Online Meeting"> 
+                            </div>
+                        </div>
+
+                        <!-- Second, smaller window for online meeting (Adjusted for less overlap and positioned offset from the main window) --><div class="absolute top-[-10%] left-[60%] bg-white/80 backdrop-blur-xl p-1 rounded-xl shadow-2xl border border-white/50 w-[50%] h-[50%] z-20 md:w-[45%] md:h-[45%] lg:w-[40%] lg:h-[40%]" style="transform: rotate(3deg);">
+                            <div class="flex items-center gap-1 px-2 py-1.5 border-b border-slate-100">
+                                <div class="flex gap-1">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                                </div>
+                                <div class="flex-1 text-center text-[10px] font-bold text-slate-400 font-eng">TEAM_CONNECT.call</div>
+                            </div>
+                            <div class="w-full h-full bg-slate-200 rounded-b-lg overflow-hidden relative">
+                                <!-- Cropped image to simulate another video feed --><img src="https://lh3.googleusercontent.com/d/1kP1GoI9lHbeaissAUfkXI6eNjMxzdsWF" class="w-full h-full object-cover object-top" alt="Another online participant">
+                            </div>
+                        </div>
+                        
+                        <!-- NOTE: Chat Bubble Decor has been removed as requested. -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moving Tape/Banner --><div class="bg-slate-900 overflow-hidden py-3 border-y border-slate-800">
+        <div class="whitespace-nowrap flex gap-8 animate-marquee font-bold font-eng text-cyan-400 text-sm tracking-widest items-center">
+            <span>/// ONLINE WORKSHOP AVAILABLE</span>
+            <span class="text-slate-600">///</span>
+            <span>NATIONWIDE COMMUNITY</span>
+            <span class="text-slate-600">///</span>
+            <span>BEGINNER WELCOME</span>
+            <span class="text-slate-600">///</span>
+            <span>/// ONLINE WORKSHOP AVAILABLE</span>
+            <span class="text-slate-600">///</span>
+            <span>NATIONWIDE COMMUNITY</span>
+            <span class="text-slate-600">///</span>
+            <span>BEGINNER WELCOME</span>
+            <span class="text-slate-600">///</span>
+        </div>
+    </div>
+
+    <!-- About Program --><section id="about" class="py-24 bg-white relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-cyan-600 font-black tracking-widest font-eng text-sm mb-2 block">HOW TO JOIN</span>
+                <h2 class="text-4xl font-bold mb-6 text-slate-900">
+                    自宅から、<br>
+                    <span class="text-cyan-600">世界を変える一歩</span>を。
+                </h2>
+                <p class="text-slate-600 text-lg">
+                    Technovation Girlsは、すべてオンラインで完結可能なプログラム。<br>
+                    PCひとつあれば、地方に住んでいても、海外に住んでいても参加できます。<br>
+                    あなたの部屋が、イノベーションの実験室になります。
+                </p>
+            </div>
+
+            <!-- Steps --><div class="grid md:grid-cols-3 gap-8 relative z-10 max-w-5xl mx-auto">
+                <!-- Step 1 --><div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:shadow-lg transition-all group">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="laptop" class="w-7 h-7 text-cyan-500"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 font-eng">1. ACCESS</h3>
+                    <p class="text-slate-600 text-sm">オンラインのプログラムに参加。PCやWi-Fiの無料レンタルもあるので、環境の心配は無用です。</p>
+                </div>
+
+                <!-- Step 2 --><div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:shadow-lg transition-all group">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="users" class="w-7 h-7 text-blue-500"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 font-eng">2. MATCHING</h3>
+                    <p class="text-slate-600 text-sm">DiscordやZoomを使ってチーム結成。遠く離れた地域の仲間と、オンラインで協力。</p>
+                </div>
+
+                <!-- Step 3 --><div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:shadow-lg transition-all group">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="globe" class="w-7 h-7 text-purple-500"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 font-eng">3. RELEASE</h3>
+                    <p class="text-slate-600 text-sm">完成したアプリとアイデアをオンラインで提出。クリックひとつで世界中の審査員へ。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section: Chat / SNS Style --><section id="community" class="py-24 bg-slate-50 relative overflow-hidden">
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <span class="bg-cyan-100 text-cyan-700 px-4 py-1 rounded-full text-xs font-bold tracking-widest font-eng mb-4 inline-block">COMMUNITY VOICES</span>
+                <h2 class="text-4xl font-bold text-slate-800">過去参加者の声</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Chat Card 1 --><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-200 overflow-hidden">
+                             <img src="https://lh3.googleusercontent.com/d/1xQNSaQU-aPveZ-i-bK3s7VqvDTLmEIsP" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900">みさきさん</p>
+                            <div class="flex items-center gap-1 text-xs text-slate-500">
+                                <i data-lucide="map-pin" class="w-3 h-3"></i> 2022, 2023年参加者
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl rounded-tl-none mb-4 flex-grow">
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            TGに参加していろいろなことに挑戦できるようになり、できないなと思うことがあっても何かしら形にできる方法があるよなと考えるようになりました。
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-bold text-cyan-600">
+                        <span class="bg-cyan-50 px-2 py-1 rounded">#GrowthMindset</span>
+                    </div>
+                </div>
+
+                <!-- Chat Card 2 --><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-200 overflow-hidden">
+                             <img src="https://lh3.googleusercontent.com/d/19gPS1YH6ig8qt_6C3bEFeo5Oy6f35p_a" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900">かのこさん</p>
+                            <div class="flex items-center gap-1 text-xs text-slate-500">
+                                <i data-lucide="map-pin" class="w-3 h-3"></i> 2025年参加者
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl rounded-tl-none mb-4 flex-grow">
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            TGでのチームワークを経験して、任せたいと思える仲間と出会ったことで、人を巻き込んでより高みを目指すという経験ができました。
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-bold text-purple-600">
+                        <span class="bg-purple-50 px-2 py-1 rounded">#Leadership</span>
+                    </div>
+                </div>
+
+                <!-- Chat Card 3 --><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-200 overflow-hidden">
+                             <img src="https://lh3.googleusercontent.com/d/1sC-KA9R-aPtadEiYnnsBxwpoBYfadRLt" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900">あゆみさん</p>
+                            <div class="flex items-center gap-1 text-xs text-slate-500">
+                                <i data-lucide="map-pin" class="w-3 h-3"></i> 2025年参加者
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl rounded-tl-none mb-4 flex-grow">
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            英会話の先生に進められて参加しました。コーディングはやったことがなかったけど、できないからこそやってみようと思って挑戦しました。
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-bold text-green-600">
+                        <span class="bg-green-50 px-2 py-1 rounded">#FearlessChallenge</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section --><section id="faq" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16">
+                <span class="text-slate-400 font-bold font-eng tracking-widest text-sm">SUPPORT</span>
+                <h2 class="text-3xl font-bold mt-2">よくある質問</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg flex items-start gap-3 text-slate-800">
+                        <span class="bg-cyan-100 text-cyan-700 py-1 px-2 rounded text-xs font-bold mt-1">Q</span>
+                        近くにメンバーがいなくても大丈夫？
+                    </h3>
+                    <p class="text-slate-600 mt-3 pl-9 text-sm leading-relaxed">
+                        はい！個人で申し込めば、運営側がオンラインで活動できるチームをマッチングします。全国の新しい友達と出会えるチャンスです。
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg flex items-start gap-3 text-slate-800">
+                        <span class="bg-cyan-100 text-cyan-700 py-1 px-2 rounded text-xs font-bold mt-1">Q</span>
+                        自分のパソコンを持っていません。
+                    </h3>
+                    <p class="text-slate-600 mt-3 pl-9 text-sm leading-relaxed">
+                        期間中、無料でノートPCとWi-Fiルーターの貸し出しを行っています。自宅にネット環境がなくても参加可能です。
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg flex items-start gap-3 text-slate-800">
+                        <span class="bg-cyan-100 text-cyan-700 py-1 px-2 rounded text-xs font-bold mt-1">Q</span>
+                        部活や塾と両立できますか？
+                    </h3>
+                    <p class="text-slate-600 mt-3 pl-9 text-sm leading-relaxed">
+                        オンラインなので移動時間がなく、スキマ時間を活用しやすいのが特徴です。週3〜5時間の活動を目安に、チームでスケジュールを調整できます。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section --><section class="py-32 bg-slate-900 text-white text-center relative overflow-hidden">
+        <!-- Decor: Network Lines --><div class="absolute inset-0 opacity-20">
+            <svg class="w-full h-full" stroke="white" stroke-width="0.5">
+                <line x1="0" y1="0" x2="100%" y2="100%" />
+                <line x1="100%" y1="0" x2="0" y2="100%" />
+            </svg>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="inline-block bg-cyan-900/50 backdrop-blur border border-cyan-500/30 px-8 py-4 rounded-full mb-8">
+                <div class="flex items-center gap-4 text-sm md:text-base font-eng font-bold tracking-widest text-cyan-300">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                    </span>
+                    <span>SERVER: ONLINE</span>
+                    <span>STATUS: RECRUITING</span>
+                </div>
+            </div>
+
+            <h2 class="text-4xl md:text-6xl font-black font-eng mb-8 leading-tight">
+                ACCESS THE <br>FUTURE.
+            </h2>
+            <p class="text-slate-300 mb-12 text-lg">
+                どこに住んでいても、あなたのアイデアは世界へ届く。<br>
+                今すぐ、ここからアクセスしよう。
+            </p>
+            
+            <a href="https://share-na2.hsforms.com/1fTUVEef2T6ueyWp-Hnhw5wcjgs8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-cyan-500 text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-cyan-400 hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(6,182,212,0.5)]">
+                <span class="font-eng tracking-widest">JOIN NOW</span>
+                <i data-lucide="arrow-right-circle" class="w-6 h-6"></i>
+            </a>
+            
+            <div class="mt-10 text-sm text-slate-500 font-bold font-eng">
+                DEADLINE: DEC 5th, 2025
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer --><footer class="bg-slate-950 border-t border-slate-900 py-12 text-center text-slate-600 text-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center items-center gap-2 mb-4 font-bold text-slate-400 font-eng text-lg">
+                Technovation Girls <span class="text-cyan-600">JAPAN REGION</span>
+            </div>
+            <p>© 2026 Technovation Girls Japan Region / Waffle. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script --><script>
+        lucide.createIcons();
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (!mobileMenu.classList.contains('hidden')) {
+                menuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+            } else {
+                menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            }
+            lucide.createIcons();
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                lucide.createIcons();
+            });
+        });
+    </script>
+</body>
+</html>
